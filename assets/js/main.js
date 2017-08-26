@@ -77,14 +77,19 @@
 })(jQuery);
 
 function generateTaxCost(form1 = 0, form2 = 0, form3 = 0, form4 = 0) {   
-   const cost = form1 + form2 + form3 + form4;
+	const num1 = parseInt(form1);
+	const num2 = parseInt(form2);
+	const num3 = parseInt(form3);
+	const num4 = parseInt(form4);
+   const cost = num1 + num2 +  num3 + num4;
+   console.log(cost)
    return cost;
 }
 
 function onGenerateClicked() {
 
 	const $i = $('.form-control');
-	console.log($i)
+	
 
 	const cost = generateTaxCost(
 		$i.eq(0).val(),
