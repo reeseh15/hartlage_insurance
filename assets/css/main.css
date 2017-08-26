@@ -1282,17 +1282,19 @@
 				border-radius: 10px;
 				box-shadow: inset 0px 0px 0px 1px white, 0px 1px 4px 0px white;
 				background-color: 	#8B0000;
-				height: 86px;
+				/*height: 86px;*/
+				display: flex;
 			}
 
 				#header h1 {
-					position: absolute;
+					/*position: absolute;*/
 					left: 40px;
 					top: 0;
 					color: #fff;
 					font-size: 2.4em;
 					letter-spacing: -2px;
 					line-height: 86px;
+					height: auto;
 				}
 
 					#header h1 a {
@@ -1301,20 +1303,22 @@
 					}
 
 				#header nav {
-					position: absolute;
+					/*position: absolute;*/
 					right: 40px;
 					top: 1px;
 					line-height: 84px;
 					text-transform: lowercase;
 					font-size: 1.3em;
 					letter-spacing: -1px;
+					padding: 0;
+					align-self: center;
 				}
 
 					#header nav a {
 						display: inline-block;
 						text-decoration: none;
 						color: black;
-						padding: 0 25px 0 25px;
+						padding: 0 20px 0 20px;
 						outline: 0;
 					}
 
@@ -1816,6 +1820,9 @@
 	border-color: #800000; 
 }
 
+#my-theme .full-width {
+	width:100%;
+}
 
 
 

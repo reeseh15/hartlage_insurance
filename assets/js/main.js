@@ -76,6 +76,30 @@
 
 })(jQuery);
 
+function generateTaxCost(form1 = 0, form2 = 0, form3 = 0, form4 = 0) {   
+   const cost = form1 + form2 + form3 + form4;
+   return cost;
+}
+
+function onGenerateClicked() {
+
+	const $i = $('.form-control');
+	console.log($i)
+
+	const cost = generateTaxCost(
+		$i.eq(0).val(),
+		$i.eq(1).val(),
+		$i.eq(2).val(),
+		$i.eq(3).val(),
+	);
+	$('.js-cost-output').html(cost);
+
+	$i.val('');
+
+}
+
+$('.create-cost').click(onGenerateClicked)
+
 
 
 
