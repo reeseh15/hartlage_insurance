@@ -83,7 +83,7 @@ function generateTaxCost(form1 = 0, form2 = 0, form3 = 0, form4 = 0) {
 	const num4 = parseInt(form4);
    const cost = num1 + num2 +  num3 + num4;
    console.log(cost)
-   return cost;
+   return '$ '+cost;
 }
 
 function onGenerateClicked() {
