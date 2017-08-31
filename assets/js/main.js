@@ -76,26 +76,71 @@
 
 })(jQuery);
 
-function generateTaxCost(form1 = 0, form2 = 0, form3 = 0, form4 = 0) {   
-	const num1 = parseInt(form1);
-	const num2 = parseInt(form2);
-	const num3 = parseInt(form3);
-	const num4 = parseInt(form4);
-   const cost = num1 + num2 +  num3 + num4;
-   console.log(cost)
-   return '$ '+cost;
+function generateTaxCost(form1 = 'n', form2 = 'n', form3 = 'n', form4 = 'n', form5 = 'n', form6 = 'n', form7 = 'n', form8 = 'n') {   
+
+	const ans1 = form1.toLowerCase();
+	const ans2 = form2.toLowerCase();
+	const ans3 = form3.toLowerCase();
+	const ans4 = form4.toLowerCase();
+	const ans5 = form5.toLowerCase();
+	const ans6 = form6.toLowerCase();
+	const ans7 = form7.toLowerCase();
+	const ans8 = form8.toLowerCase();
+
+	//W-2, Own Home, Own Business, have 1099, have SS Benefits, have unemployement income, have rental income, have other forms
+	if (ans1 === 'y' && ans2 === 'y' && ans3 === 'y' && ans4 === 'y' && ans5 === 'y' && ans6 === 'y' && ans7 === 'y' && ans8 === 'y'){
+		return 'your cost: $' + 400; 
+	}
+	//W-2, Own Home, Own Business, have 1099, have SS Benefits, have unemployement income, have rental income
+	if (ans1 === 'y' && ans2 === 'y' && ans3 === 'y' && ans4 === 'y' && ans5 === 'y' && ans6 === 'y' && ans7 === 'y' && ans8 === 'n'){
+		return 'your cost: $' + 270; 
+	}
+	//W-2, Own Home, Own Business, have 1099, have SS Benefits, have unemployement income
+	if (ans1 === 'y' && ans2 === 'y' && ans3 === 'y' && ans4 === 'y' && ans5 === 'y' && ans6 === 'y' && ans7 === 'n' && ans8 === 'n'){
+		return 'your cost: $' + 225; 
+	}
+	//W-2, Own Home, Own Business, have 1099, have SS Benefits
+	if (ans1 === 'y' && ans2 === 'y' && ans3 === 'y' && ans4 === 'y' && ans5 === 'y' && ans6 === 'n' && ans7 === 'n' && ans8 === 'n'){
+		return 'your cost: $' + 175; 
+	}
+	//W-2, Own Home, Own Business, have 1099
+	if (ans1 === 'y' && ans2 === 'y' && ans3 === 'y' && ans4 === 'y' && ans5 === 'n' && ans6 === 'n' && ans7 === 'n' && ans8 === 'n'){
+		return 'your cost: $' + 100; 
+	}
+	//W-2, Own Home, Own Business
+	if (ans1 === 'y' && ans2 === 'y' && ans3 === 'y' && ans4 === 'n' && ans5 === 'n' && ans6 === 'n' && ans7 === 'n' && ans8 === 'n'){
+		return 'your cost: $' + 75; 
+	}
+	//W-2, Own Home
+	if (ans1 === 'y' && ans2 === 'y' && ans3 === 'n' && ans4 === 'n' && ans5 === 'n' && ans6 === 'n' && ans7 === 'n' && ans8 === 'n'){
+		return 'your cost: $' + 40; 
+	}
+	//W-2 
+   if (ans1 === 'y' && ans2 === 'n' && ans3 === 'n' && ans4 === 'n' && ans5 === 'n' && ans6 === 'n' && ans7 === 'n' && ans8 === 'n'){
+		return 'your cost: $' + 25; 
+	}
+	//nothing
+	if (ans1 === 'n' && ans2 === 'n' && ans3 === 'n' && ans4 === 'n' && ans5 === 'n' && ans6 === 'n' && ans7 === 'n' && ans8 === 'n'){
+		return `nothing was entered`; 
+	}
+	else {
+		return `Please answer all questions with Y or N`
+	}
 }
 
 function onGenerateClicked() {
 
 	const $i = $('.form-control');
 	
-
 	const cost = generateTaxCost(
 		$i.eq(0).val(),
 		$i.eq(1).val(),
 		$i.eq(2).val(),
 		$i.eq(3).val(),
+		$i.eq(4).val(),
+		$i.eq(5).val(),
+		$i.eq(6).val(),
+		$i.eq(7).val(),
 	);
 	$('.js-cost-output').html(cost);
 
