@@ -155,6 +155,8 @@ $slideshow.slick({
   infinite: true,
   speed: 500,
   fade: true,
+  prevArrow: false,
+  nextArrow: false, 
   cssEase: 'linear'
 });
 
