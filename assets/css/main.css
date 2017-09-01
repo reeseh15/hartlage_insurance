@@ -1927,7 +1927,7 @@
 #my-theme .padding-top{
 	padding-top: 1rem;
 }
-#my-theme .welcome-font{
+#my-theme .welcome-font h2{
 	font-size: 7.5rem; 
 	text-transform: none; 
 }
