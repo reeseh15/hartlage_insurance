@@ -1911,9 +1911,23 @@
 }
 
 #my-theme .slideShow-padding {
-	padding-top: 10rem;
+	padding-top: 3rem;
 	padding-left: 10rem;
 }
+
+#my-theme .aboutUs {
+	padding-bottom: 3rem;
+    border-bottom: 1px solid black;
+}
+
+#my-theme .no-top-padding{
+	padding-top: 0px;
+}
+
+#my-theme .padding-top{
+	padding-top: 1rem;
+}
+
 
 
 
