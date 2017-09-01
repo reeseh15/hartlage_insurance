@@ -130,13 +130,40 @@ function onGenerateClicked() {
 		$i.eq(6).val(),
 		$i.eq(7).val(),
 	);
-	$('.js-cost-output').html(cost);
+
+	if (cost === 20){
+		$('.js-cost-output').html('Yes (y) must be at least one input')
+	}
+	else {
+		$('.js-cost-output').html(`$${cost}`);
+	}
+	
 
 	// $i.val('');
 
 }
 
 $('.create-cost').click(onGenerateClicked)
+
+
+
+
+const $slideshow = $('.js-slideshow');
+
+$slideshow.slick({
+  dots: false,
+  infinite: true,
+  speed: 500,
+  fade: true,
+  cssEase: 'linear'
+});
+
+const $nextButton = $('.js-next');
+const onNextButtonClick = () => {
+	console.log ('in onNextButtonClick')
+	$slideshow.slick('slickNext');
+}
+$nextButton.click(onNextButtonClick)
 
 
 

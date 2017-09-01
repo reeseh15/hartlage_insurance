@@ -1897,6 +1897,25 @@
 	text-align: center;
 }
 
+#my-theme .slideshow-image{
+	height: 30.5rem;
+	width: 100%;
+}
+
+#my-theme .button-margin{
+	margin-top: 3rem; 
+}
+
+#my-theme .shadow {
+	box-shadow: 1rem 1rem 5rem black;
+}
+
+#my-theme .slideShow-padding {
+	padding-top: 10rem;
+	padding-left: 10rem;
+}
+
+
 
 
 
