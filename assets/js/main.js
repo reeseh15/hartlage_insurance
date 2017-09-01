@@ -78,55 +78,43 @@
 
 function generateTaxCost(form1 = 'n', form2 = 'n', form3 = 'n', form4 = 'n', form5 = 'n', form6 = 'n', form7 = 'n', form8 = 'n') {   
 
-	const ans1 = form1.toLowerCase();
-	const ans2 = form2.toLowerCase();
-	const ans3 = form3.toLowerCase();
-	const ans4 = form4.toLowerCase();
-	const ans5 = form5.toLowerCase();
-	const ans6 = form6.toLowerCase();
-	const ans7 = form7.toLowerCase();
-	const ans8 = form8.toLowerCase();
+	let cost = 20; 
+	const w2 = form1.toLowerCase();
+	const ownHome = form2.toLowerCase();
+	const ownBusiness = form3.toLowerCase();
+	const have1099 = form4.toLowerCase();
+	const ssBenefits = form5.toLowerCase();
+	const unemployement = form6.toLowerCase();
+	const rental = form7.toLowerCase();
+	const other = form8.toLowerCase();
 
-	//W-2, Own Home, Own Business, have 1099, have SS Benefits, have unemployement income, have rental income, have other forms
-	if (ans1 === 'y' && ans2 === 'y' && ans3 === 'y' && ans4 === 'y' && ans5 === 'y' && ans6 === 'y' && ans7 === 'y' && ans8 === 'y'){
-		return 'your cost: $' + 400; 
+	if (w2 === 'y' || w2 === 'yes'){
+		cost = cost + 5; 
 	}
-	//W-2, Own Home, Own Business, have 1099, have SS Benefits, have unemployement income, have rental income
-	if (ans1 === 'y' && ans2 === 'y' && ans3 === 'y' && ans4 === 'y' && ans5 === 'y' && ans6 === 'y' && ans7 === 'y' && ans8 === 'n'){
-		return 'your cost: $' + 270; 
+	if (ownHome === 'y' || ownHome === 'yes'){
+		cost = cost + 15;
 	}
-	//W-2, Own Home, Own Business, have 1099, have SS Benefits, have unemployement income
-	if (ans1 === 'y' && ans2 === 'y' && ans3 === 'y' && ans4 === 'y' && ans5 === 'y' && ans6 === 'y' && ans7 === 'n' && ans8 === 'n'){
-		return 'your cost: $' + 225; 
+	if (ownBusiness === 'y' || ownBusiness === 'yes'){
+		cost = cost + 25; 
 	}
-	//W-2, Own Home, Own Business, have 1099, have SS Benefits
-	if (ans1 === 'y' && ans2 === 'y' && ans3 === 'y' && ans4 === 'y' && ans5 === 'y' && ans6 === 'n' && ans7 === 'n' && ans8 === 'n'){
-		return 'your cost: $' + 175; 
+	if (have1099 === 'y' || have1099 === 'yes'){
+		cost = cost + 20;
 	}
-	//W-2, Own Home, Own Business, have 1099
-	if (ans1 === 'y' && ans2 === 'y' && ans3 === 'y' && ans4 === 'y' && ans5 === 'n' && ans6 === 'n' && ans7 === 'n' && ans8 === 'n'){
-		return 'your cost: $' + 100; 
+	if (ssBenefits === 'y' || ssBenefits === 'yes'){
+		cost = cost + 20; 
 	}
-	//W-2, Own Home, Own Business
-	if (ans1 === 'y' && ans2 === 'y' && ans3 === 'y' && ans4 === 'n' && ans5 === 'n' && ans6 === 'n' && ans7 === 'n' && ans8 === 'n'){
-		return 'your cost: $' + 75; 
+	if (unemployement === 'y' || unemployement === 'yes'){
+		cost = cost + 20;
 	}
-	//W-2, Own Home
-	if (ans1 === 'y' && ans2 === 'y' && ans3 === 'n' && ans4 === 'n' && ans5 === 'n' && ans6 === 'n' && ans7 === 'n' && ans8 === 'n'){
-		return 'your cost: $' + 40; 
+	if (rental === 'y' || rental === 'yes'){
+		cost = cost + 35; 
 	}
-	//W-2 
-   if (ans1 === 'y' && ans2 === 'n' && ans3 === 'n' && ans4 === 'n' && ans5 === 'n' && ans6 === 'n' && ans7 === 'n' && ans8 === 'n'){
-		return 'your cost: $' + 25; 
+	if (other === 'y' || other === 'yes'){
+		cost = cost + 40;
 	}
-	//nothing
-	if (ans1 === 'n' && ans2 === 'n' && ans3 === 'n' && ans4 === 'n' && ans5 === 'n' && ans6 === 'n' && ans7 === 'n' && ans8 === 'n'){
-		return `nothing was entered`; 
-	}
-	else {
-		return `Please answer all questions with Y or N`
-	}
+	return cost; 
 }
+
 
 function onGenerateClicked() {
 
@@ -144,7 +132,7 @@ function onGenerateClicked() {
 	);
 	$('.js-cost-output').html(cost);
 
-	$i.val('');
+	// $i.val('');
 
 }
 
