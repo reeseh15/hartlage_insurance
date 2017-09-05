@@ -1927,9 +1927,16 @@
 #my-theme .padding-top{
 	padding-top: 1rem;
 }
-#my-theme .welcome-font h2{
-	font-size: 7.5rem; 
-	text-transform: none; 
+#my-theme .welcome-font{
+	font-size: 7.5rem;
+    text-transform: none;
+    text-align: center;
+    color: white;
+    padding-top: 3rem;
+}
+
+#my-theme .button-inline {
+	display: inline-block;
 }
 
 

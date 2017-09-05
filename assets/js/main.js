@@ -168,6 +168,24 @@ const onNextButtonClick = () => {
 $nextButton.click(onNextButtonClick)
 
 
+const $send = $('.js-send');
+
+public static ClientResponse SendSimpleMessage() {
+    Client client = Client.create();
+    client.addFilter(new HTTPBasicAuthFilter("api", "key-b225b392fe621cdc0ca529c62a257d2a"));
+    WebResource webResource = client.resource("https://api.mailgun.net/v3/sandbox779f93f9ad994fc2adce48f198626777.mailgun.org/messages");
+    MultivaluedMapImpl formData = new MultivaluedMapImpl();
+    formData.add("from", "Mailgun Sandbox <postmaster@sandbox779f93f9ad994fc2adce48f198626777.mailgun.org>");
+    formData.add("to", "Reese Hartlage <reeseh15@gmail.com>");
+    formData.add("subject", "Hello Reese Hartlage");
+    formData.add("text", "Congratulations Reese Hartlage, you just sent an email with Mailgun!  You are truly awesome!");
+    return webResource.type(MediaType.APPLICATION_FORM_URLENCODED).
+                                        post(ClientResponse.class, formData);
+}
+
+$send.click(SendSimpleMessage);
+
+
 
 
 

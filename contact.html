@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+e<!DOCTYPE HTML>
 <!--
 	Minimaxing by HTML5 UP
 	html5up.net | @ajlkn
@@ -62,22 +62,23 @@
 		<div class="jumbotron">
 			<h1 class="display-3 text-color center-text">Input the following fields to send us an email..</h1>
 			
-			<form>
+			<form action="mailto:reeseh15@gmail.com?Subject=Hello" method="post" enctype="text/plain">
 				<!-- INPUTS -->
 				<div class="input-group">
-					<input type="text" class="form-control input-fields" placeholder="Your email" aria-describedby="basic-addon2">
+					<input type="text" name = 'My name is: ' class="form-control input-fields" placeholder="Your name here.." aria-describedby="basic-addon2">
   					
 				</div>
 				<div>
-					 <textarea class="form-control input-fields message-area" placeholder="input message here" aria-describedby="sizing-addon1"></textarea>
+					 <textarea type = "text" name = "body" class="form-control input-fields message-area" placeholder="input message here" aria-describedby="sizing-addon1"></textarea>
 				</div>
+				<p class="lead btn-padding">
+				<button type = "submit" value = "send" class="btn btn-primary btn-lg create-madlib button-background-color" role="button">Send</button>
+				</p>
 				
 				<!-- END INPUTS -->
 			</form>
 
-			<p class="lead btn-padding">
-			<a class="btn btn-primary btn-lg create-madlib button-background-color" href="#" role="button">Send</a>
-			</p>
+			
 		</div>
 						</div>
 					</div>
